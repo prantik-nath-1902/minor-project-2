@@ -1,0 +1,769 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HyenaTech | Gaming & Technology</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7f6;
+      color: #26332f;
+    }
+
+    /* Navbar */
+    .custom-navbar {
+      background: #fff;
+      padding: 16px 0;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar-brand {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: #147d64;
+    }
+
+    .navbar-brand:hover {
+      color: #0d5d4b;
+    }
+
+    .custom-navbar .nav-link {
+      color: #303b38;
+      font-weight: 500;
+      padding: 10px 16px;
+      margin: 0 3px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .custom-navbar .nav-link:hover,
+    .custom-navbar .nav-link.active {
+      background: #e4f8f0;
+      color: #147d64;
+    }
+
+    .nav-btn {
+      display: inline-block;
+      background: #147d64;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-btn:hover {
+      background: #0d5d4b;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+ 
+    .hero {
+      min-height: 85vh;
+      width: 100%;
+
+      background-image:
+        linear-gradient(
+          rgba(0, 0, 0, 0.45),
+          rgba(0, 0, 0, 0.45)
+        ),
+        url("./pexels-dkomov-34803972.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: #ff6b6b;
+      color: white;
+      padding: 13px 30px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .hero-btn:hover {
+      background: #ff5252;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+   
+    .products-section {
+      padding: 65px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #147d64;
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .product {
+      height: 100%;
+      background: white;
+      border: 1px solid #e0e8e4;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .product img {
+      display: block;
+      width: 100%;
+      height: 190px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    .product h2 {
+      font-size: 1.15rem;
+      font-weight: bold;
+      min-height: 48px;
+      margin-bottom: 12px;
+    }
+
+    .product p {
+      color: #147d64;
+      font-size: 1.15rem;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .product button {
+      background: #147d64;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 7px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .product button:hover {
+      background: #0d5d4b;
+    }
+
+    
+    footer {
+      background: #183b32;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 20px;
+    }
+
+    footer p {
+      margin: 8px 0;
+    }
+
+    footer a {
+      color: #b8f0d8;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    
+    @media (max-width: 991px) {
+      .custom-navbar .navbar-collapse {
+        padding-top: 15px;
+      }
+
+      .custom-navbar .nav-link {
+        margin: 3px 0;
+      }
+
+      .nav-btn {
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero {
+        min-height: 70vh;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+    .benefits-section {
+  padding: 70px 0;
+  background: #ffffff;
+}
+
+.benefits-intro {
+  text-align: center;
+  color: #66736e;
+  margin: -20px auto 40px;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.benefit-card {
+  height: 100%;
+  padding: 30px 20px;
+  text-align: center;
+  background: #f5faf7;
+  border: 1px solid #e0eee7;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(20, 125, 100, 0.12);
+}
+
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dff5e9;
+  color: #147d64;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.benefit-card h3 {
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #26332f;
+}
+
+.benefit-card p {
+  color: #66736e;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+.section-title{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: #0edc26;
+}
+
+/* Features Section */
+.features-section {
+  padding: 70px 0;
+  background: #f5faf7;
+}
+
+.features-intro {
+  text-align: center;
+  color: #66736e;
+  margin: -20px auto 40px;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.feature-card {
+  height: 100%;
+  padding: 30px 24px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e0eee7;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(20, 125, 100, 0.12);
+}
+
+.feature-icon {
+  display: inline-block;
+  font-size: 42px;
+  color: #147d64;
+  margin-bottom: 18px;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  color: #66736e;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* Customer Reviews Section */
+.reviews-section {
+  padding: 70px 0;
+  background: #f5faf7;
+}
+
+.reviews-intro {
+  text-align: center;
+  color: #66736e;
+  margin: -20px auto 40px;
+  max-width: 600px;
+}
+
+.review-card {
+  height: 100%;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e0eee7;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(20, 125, 100, 0.12);
+}
+
+.stars {
+  color: #f4b400;
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.review-text {
+  color: #52645d;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.review-customer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #e5eee9;
+  padding-top: 18px;
+}
+
+.customer-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #dff5e9;
+  color: #147d64;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.review-customer h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.review-customer span {
+  color: #66736e;
+  font-size: 0.85rem;
+}
+  </style>
+</head>
+
+<body>
+
+
+  <header>
+    <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
+      <div class="container">
+
+        <a class="navbar-brand" href="#home">HyenaTech</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#benefits">Benefits</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#reviews">Reviews</a>
+            </li>
+
+            <li class="nav-item ms-lg-2">
+              <a class="nav-btn" href="#products">Get Started</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+ 
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Welcome to HyenaTech</h1>
+
+      <p>
+        Discover amazing laptops and technology products
+        tailored just for you.
+      </p>
+
+      <a href="#products" class="hero-btn">Explore Products</a>
+    </div>
+  </section>
+
+
+  <section class="products-section" id="products">
+    <div class="container">
+
+      <h2 class="section-title">Our Latest Laptops</h2>
+
+      <div class="row g-4">
+
+       
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="product">
+            <img
+              src="./asus a15.jpg"
+              alt="Asus TUF A15 Gaming Laptop"
+              
+            >
+
+            <h2>Asus TUF A15 Gaming Laptop (2026)</h2>
+            <p>₹1,00,000</p>
+            <button type="button">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="product">
+            <img
+              src="./macbook air.jpeg"
+              alt="MacBook Air"
+              
+            >
+
+            <h2>MacBook Air (2026)</h2>
+            <p>₹1,29,990</p>
+            <button type="button">Buy Now</button>
+          </div>
+        </div>
+
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="product">
+            <img
+              src="./macbook neo.jpg"
+              alt="MacBook Neo"
+              
+            >
+
+            <h2>MacBook Neo (2026)</h2>
+            <p>₹1,49,990</p>
+            <button type="button">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="product">
+            <img
+              src="./hp.png"
+              alt="HP OmniBook 5"
+              
+            >
+
+            <h2>HP OmniBook 5 (2026)</h2>
+            <p>₹1,13,000</p>
+            <button type="button">Buy Now</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+<section id="benefits" class="benefits-section">
+  <div class="container">
+
+    <h2 class="section-title">Why Choose HyenaTech?</h2>
+
+  
+
+    <div class="row g-4">
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="benefit-card">
+          <div class="benefit-icon">₹</div>
+          <h3>Affordable Prices</h3>
+          <p>
+            Explore laptops at competitive prices
+            to suit different budgets.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="benefit-card">
+          <div class="benefit-icon">✓</div>
+          <h3>Genuine Products</h3>
+          <p>
+            Shop confidently with authentic products
+            from trusted laptop brands.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="benefit-card">
+          <div class="benefit-icon">➜</div>
+          <h3>Convenient Shopping</h3>
+          <p>
+            Browse laptop options and compare
+            prices from the comfort of your home.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="benefit-card">
+          <div class="benefit-icon">♡</div>
+          <h3>Customer Support</h3>
+          <p>
+            Get assistance with your product
+            questions and purchase decisions.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="features" class="features-section">
+  <div class="container">
+
+    <h2 class="section-title">Explore Our Features</h2>
+
+    <p class="features-intro">
+      Discover technology designed for work,
+      study, gaming, and entertainment.
+    </p>
+
+    <div class="row g-4">
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="feature-card">
+          <i class="bi bi-cpu feature-icon"></i>
+          <h3>Powerful Performance</h3>
+          <p>
+            Explore laptops designed to handle
+            multitasking, productivity, and gaming.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="feature-card">
+          <i class="bi bi-display feature-icon"></i>
+          <h3>Stunning Display</h3>
+          <p>
+            Enjoy clear visuals for entertainment,
+            creative projects, and everyday work.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="feature-card">
+          <i class="bi bi-laptop feature-icon"></i>
+          <h3>Sleek Design</h3>
+          <p>
+            Find stylish laptops suited to your
+            college, office, and travel needs.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-6">
+        <div class="feature-card">
+          <i class="bi bi-battery-charging feature-icon"></i>
+          <h3>Battery Efficiency</h3>
+          <p>
+            Compare battery specifications to find
+            a laptop suited to your daily routine.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-6">
+        <div class="feature-card">
+          <i class="bi bi-gpu-card feature-icon"></i>
+          <h3>Gaming & Graphics</h3>
+          <p>
+            Discover models with graphics hardware
+            suited to gaming and creative applications.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="reviews" class="reviews-section">
+  <div class="container">
+
+    <h2 class="section-title">What Our Customers Say</h2>
+
+    <p class="reviews-intro">
+      Discover what customers appreciate about HyenaTech.
+    </p>
+
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-12 col-md-6">
+        <div class="review-card">
+
+          <div class="stars">★★★★★</div>
+
+          <p class="review-text">
+            "The laptop selection is great, and the product
+            details make it easy to compare options."
+          </p>
+
+          <div class="review-customer">
+            <div class="customer-icon">R</div>
+            <div>
+              <h3>Rahul Das</h3>
+              <span>Laptop Shopper</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <div class="review-card">
+
+          <div class="stars">★★★★★</div>
+
+          <p class="review-text">
+            "I like the clean website design. Finding laptop
+            prices and comparing models is simple."
+          </p>
+
+          <div class="review-customer">
+            <div class="customer-icon">P</div>
+            <div>
+              <h3>Priya Sharma</h3>
+              <span>Laptop Shopper</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+  <footer>
+    <p>&copy; 2026 HyenaTech. All rights reserved.</p>
+
+    </p>
+  </footer>
+<a class="nav-link" href="#benefits">Benefits</a>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+</body>
+</html>
+
